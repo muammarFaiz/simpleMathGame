@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>game</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Atma:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="wrapper1">
+
+        <form id="difficulity_form" class="atma-regular">
+            <div>Difficulity:</div>
+            <label>
+                <input type="radio" name="difficulity" value="easy" id="">
+                <span>Easy</span>
+            </label>
+            <label>
+                <input type="radio" name="difficulity" value="medium" id="">
+                <span>Medium</span>
+            </label>
+            <label>
+                <input type="radio" name="difficulity" value="hard" id="">
+                <span>Hard</span>
+            </label>
+            <br>
+            <button type="submit">Start</button>
+        </form>
+    
+        <form id="game" class="hide atma-regular">
+            <span id="number1" class="question_span">2</span>
+            <span id="mod" class="question_span">&divide; &times; &plus; &minus;</span>
+            <span id="number2" class="question_span">3</span>
+            <span class="question_span">&equals;</span>
+            <input type="text" name="userAnswer" id="answer" maxlength="7">
+            <br><span id="warning"></span>
+            <p>Only accept up to two digits after decimal separator point, excess digits ignored not rounded.</p>
+            <p>decimal point use dot sign not coma</p>
+            <p>do not accept exponential notation</p>
+        </form>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>

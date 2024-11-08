@@ -1,0 +1,80 @@
+body {
+    background-color: rgb(255, 153, 0);
+    margin: 10vh 20vw;
+    height: 100vh;
+}
+
+.atma-light {
+    font-family: "Atma", system-ui;
+    font-weight: 300;
+    font-style: normal;
+}
+.atma-regular {
+    font-family: "Atma", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+.atma-medium {
+    font-family: "Atma", system-ui;
+    font-weight: 500;
+    font-style: normal;
+}
+
+/* difficulity_form----------------------------------------------------------------difficulity_form */
+.hide {
+    display: none;
+}
+.wrapper1 {
+    background-color: rgb(187, 84, 36);
+    height: inherit;
+    padding: 1px;
+    overflow: auto;
+}
+/* ::-webkit-scrollbar{width:6px;border-left:1px solid #E6ECF8;}
+::-webkit-scrollbar-thumb{background-color:#d6872c;} */
+.wrapper1::-webkit-scrollbar{
+    width: 20px;
+}
+::-webkit-scrollbar-thumb{
+    background-color: #c77016;
+    border-radius: 20px;
+}
+#difficulity_form {
+    margin: 10vh 10vw;
+    font-size: 50px;
+}
+#difficulity_form > button {
+    font-family: inherit;
+    font-size: 30px;
+    border-radius: 20px;
+    padding: 2px 30px;
+    background-color: green;
+}
+#difficulity_form > button:hover {
+    background-color: rgb(49, 160, 49);
+}
+#difficulity_form input {
+    width: 20px;
+    height: 20px;
+}
+#difficulity_form > label > span:hover {
+    color: green;
+}
+
+/* game------------------------------------------------------------------------------------------game */
+#game {
+    margin: 10vh 10vw;
+    font-size: 30px;
+}
+.question_span, #game > input {
+    font-size: 50px;
+    font-weight: 500;
+    width: 250px;
+}
+#game > input {
+    border-radius: 12px;
+}
+#warning {
+    font-weight: 500;
+}
+/* TODO: double check */
