@@ -1,0 +1,69 @@
+<%- include("parts/head.ejs"); %>
+
+<% if (locals.user) { %>
+    <form action="http://localhost:3000/login" method="post" id="login_form" class="hide atma-regular">
+<% } else { %>
+    <form action="http://localhost:3000/login" method="post" id="login_form" class="atma-regular">
+<% } %>
+    <label for="username_input">username:</label>
+    <br>
+    <input type="text" name="username" class="username_input">
+    <br>
+    <label for="password_input">password:</label>
+    <br>
+    <input type="password" name="password" class="password_input">
+    <br>
+    <button type="submit">Login</button>
+    <br>
+    or register here: <button id="to_register">Register</button>
+</form>
+
+<form action="http://localhost:3000/register" method="post" id="register_form" class="hide atma-regular">
+    <label for="username_input">username:</label>
+    <br>
+    <input type="text" name="username" class="username_input">
+    <br>
+    <label for="password_input">password:</label>
+    <br>
+    <input type="password" name="password" class="password_input">
+    <br>
+    <button type="submit">Register</button>
+    <br>
+    already registered? <button id="to_login">Login</button>
+</form>
+
+<% if (locals.user) { %>
+    <form id="difficulity_form" class="atma-regular">  
+<% } else { %>
+    <form id="difficulity_form" class="hide atma-regular">
+<% } %>
+    <div>Difficulity:</div>
+    <label>
+        <input type="radio" name="difficulity" value="easy">
+        <span>Easy</span>
+    </label>
+    <label>
+        <input type="radio" name="difficulity" value="medium">
+        <span>Medium</span>
+    </label>
+    <label>
+        <input type="radio" name="difficulity" value="hard">
+        <span>Hard</span>
+    </label>
+    <br>
+    <button type="submit">Start</button>
+</form>
+
+<form id="game" class="hide atma-regular">
+    <span id="number1" class="question_span">2</span>
+    <span id="mod" class="question_span">&divide; &times; &plus; &minus;</span>
+    <span id="number2" class="question_span">3</span>
+    <span class="question_span">&equals;</span>
+    <input type="text" name="userAnswer" id="answer" maxlength="7">
+    <br><span id="warning"></span>
+    <p>Only accept up to two digits after decimal separator point, excess digits ignored not rounded.</p>
+    <p>decimal point use dot sign not coma</p>
+    <p>do not accept exponential notation</p>
+</form>
+
+<%- include("parts/footer.ejs"); %>

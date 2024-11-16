@@ -20,10 +20,11 @@ body {
     font-style: normal;
 }
 
-/* difficulity_form----------------------------------------------------------------difficulity_form */
 .hide {
     display: none;
 }
+
+/* difficulity_form----------------------------------------------------------------difficulity_form */
 .wrapper1 {
     background-color: rgb(187, 84, 36);
     height: inherit;
@@ -39,8 +40,10 @@ body {
     background-color: #c77016;
     border-radius: 20px;
 }
-#difficulity_form {
+#difficulity_form, #game, #login_form, #register_form {
     margin: 10vh 10vw;
+}
+#difficulity_form {
     font-size: 50px;
 }
 #difficulity_form > button {
@@ -63,7 +66,6 @@ body {
 
 /* game------------------------------------------------------------------------------------------game */
 #game {
-    margin: 10vh 10vw;
     font-size: 30px;
 }
 .question_span, #game > input {
@@ -77,4 +79,3 @@ body {
 #warning {
     font-weight: 500;
 }
-/* TODO: double check */

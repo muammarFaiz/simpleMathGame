@@ -6,7 +6,11 @@ const ELEMENTS = {
     number2Span: document.querySelector("#number2"),
     modSpan: document.querySelector("#mod"),
     warningSpan: document.querySelector("#warning"),
-    answerInput: document.querySelector("#answer")
+    answerInput: document.querySelector("#answer"),
+    loginForm: document.querySelector("#login_form"),
+    registerForm: document.querySelector("#register_form"),
+    toRegButton: document.querySelector("#to_register"),
+    toLoginButton: document.querySelector("#to_login")
 }
 const MATH_SYMBOLS = ["&divide;", "&times;", "&plus;", "&minus;"];
 
@@ -15,22 +19,21 @@ let gameObject = {
     number2: undefined, 
     operator: undefined
 };
-let difficulity;
+let gameDifficulity;
 let currentQuestion;
+
 
 ELEMENTS.difficulityForm.addEventListener("submit", (event) => {
     event.preventDefault();
     const userFormData = new FormData(event.target);
     const userInputObject = Object.fromEntries(userFormData.entries());
     if ("difficulity" in userInputObject) {
-        difficulity = userInputObject.difficulity;
+        gameDifficulity = userInputObject.difficulity;
         ELEMENTS.gameForm.classList.remove("hide");
         ELEMENTS.difficulityForm.classList.add("hide");
-        const mathOperator = MATH_SYMBOLS[randomize(3)];
         gameObject = refreshGameForm();
     }
 });
-
 ELEMENTS.gameForm.addEventListener("submit", (event) => {
     event.preventDefault();
     ELEMENTS.warningSpan.textContent = "";
@@ -44,6 +47,17 @@ ELEMENTS.gameForm.addEventListener("submit", (event) => {
         console.log("no answer submited");
     }
 });
+ELEMENTS.toRegButton.addEventListener("click", (event) => {
+    event.preventDefault();
+    ELEMENTS.loginForm.classList.add("hide");
+    ELEMENTS.registerForm.classList.remove("hide");
+});
+ELEMENTS.toLoginButton.addEventListener("click", (event) => {
+    event.preventDefault();
+    ELEMENTS.loginForm.classList.remove("hide");
+    ELEMENTS.registerForm.classList.add("hide");
+});
+
 
 // functions-------------------------------------------------function------------------------------------------------------functions
 function handleUserAnswer(userAnswer) {
@@ -103,14 +117,14 @@ function refreshGameForm() {
         number2: undefined,
         operator: mathOperator
     }
-    if (difficulity === "easy") {
+    if (gameDifficulity === "easy") {
         gameObj.number1 = randomize(9);
         gameObj.number2 = randomize(9);
-    } else if (difficulity === "medium") {
+    } else if (gameDifficulity === "medium") {
         gameObj.number1 = randomize(9);
         gameObj.number2 = randomize(9);
         gameObj[`number${randomize(2, 1)}`] = randomize(99, 10);
-    } else if (difficulity === "hard") {
+    } else if (gameDifficulity === "hard") {
         gameObj.number1 = randomize(99, 10);
         gameObj.number2 = randomize(99, 10);
     }
