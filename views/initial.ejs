@@ -1,0 +1,61 @@
+<%- include("parts/head.ejs"); %>
+<p id="warning" class="atma-medium"><%= locals.userStatus %></p>
+
+<% if (locals.user) { %>
+    <form action="http://localhost:3000/login" method="post" id="login_form" class="hide atma-regular">
+<% } else { %>
+    <form action="http://localhost:3000/login" method="post" id="login_form" class="atma-regular">
+<% } %>
+    <label for="register_username_input">username:</label>
+    <br>
+    <input type="text" name="username" id="register_username_input" autocomplete="username">
+    <br>
+    <label for="register_password_input">password:</label>
+    <br>
+    <input type="password" name="password" id="register_password_input">
+    <br>
+    <button type="submit">Login</button>
+    <br>
+    or register here: <button id="to_register" type="button">Register</button>
+</form>
+
+<form action="http://localhost:3000/register" method="post" id="register_form" class="hide atma-regular">
+    <label for="login_username_input">username:</label>
+    <br>
+    <input type="text" name="username" id="login_username_input" autocomplete="username">
+    <br>
+    <label for="login_password_input">password:</label>
+    <br>
+    <input type="password" name="password" id="login_password_input">
+    <br>
+    <button type="submit">Register</button>
+    <br>
+    already registered? <button id="to_login" type="button">Login</button>
+</form>
+
+<% if (locals.user) { %>
+    <form id="difficulity_form" class="atma-regular" method="post" action="http://localhost:3000/difficulity">
+        <div class="welcome_user">
+            <p>welcome <%= locals.user %></p><a href="http://localhost:3000/logout">Logout</a>
+        </div>
+<% } else { %>
+    <form id="difficulity_form" class="hide">
+<% } %>
+    <div>Difficulity:</div>
+    <label>
+        <input type="radio" name="difficulity" value="easy">
+        <span>Easy</span>
+    </label>
+    <label>
+        <input type="radio" name="difficulity" value="medium">
+        <span>Medium</span>
+    </label>
+    <label>
+        <input type="radio" name="difficulity" value="hard">
+        <span>Hard</span>
+    </label>
+    <br>
+    <button type="submit">Start</button>
+</form>
+
+<%- include("parts/footer.ejs"); %>

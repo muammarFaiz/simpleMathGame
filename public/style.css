@@ -30,6 +30,7 @@ body {
     height: inherit;
     padding: 1px;
     overflow: auto;
+    border-radius: 20px;
 }
 /* ::-webkit-scrollbar{width:6px;border-left:1px solid #E6ECF8;}
 ::-webkit-scrollbar-thumb{background-color:#d6872c;} */
@@ -42,9 +43,17 @@ body {
 }
 #difficulity_form, #game, #login_form, #register_form {
     margin: 10vh 10vw;
+    text-align: center;
 }
 #difficulity_form {
     font-size: 50px;
+}
+#difficulity_form > .welcome_user {
+    font-size: 30px;
+    margin-bottom: 50px;
+}
+#difficulity_form > .welcome_user > p {
+    margin: 0;
 }
 #difficulity_form > button {
     font-family: inherit;
@@ -75,7 +84,9 @@ body {
 }
 #game > input {
     border-radius: 12px;
+    background-color: #cd8445;
 }
 #warning {
-    font-weight: 500;
+    font-size: 25px;
+    text-align: center;
 }
